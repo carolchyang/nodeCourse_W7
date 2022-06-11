@@ -1,0 +1,540 @@
+{
+	"info": {
+		"_postman_id": "8d0fe3f9-9d62-4efb-a307-ee3e96270eae",
+		"name": "W7 遠端 nodeCourse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9557023"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "取得所有貼文",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/posts",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "asc",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得單一貼文",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/post/:id",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"post",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62a4589feba94cc8bb3319e4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增貼文",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"貼文內容6-gg\",\r\n    \"image\": \"https://images.unsplash.com/photo-1618988727281-8d54f5d32932?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1177&q=80\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/post",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "刪除單一貼文",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/post/:id",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"post",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62a454f6c67fa98e8f9748b1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得指定用戶所有貼文",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/posts/user/:id",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts",
+								"user",
+								":id"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "asc",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "5",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62a34a8c74e837dc720eb503"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "按讚貼文",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"貼文內容3\",\r\n    \"image\": \"https://images.unsplash.com/photo-1618988727281-8d54f5d32932?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1177&q=80\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/post/:id/like",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"post",
+								":id",
+								"like"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62a4589feba94cc8bb3319e4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取消按讚貼文",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/post/:id/unlike",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"post",
+								":id",
+								"unlike"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62a4589feba94cc8bb3319e4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "註冊",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"gg\",\r\n    \"email\": \"g@gmail.com\",\r\n    \"password\": \"g12345678\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/user/sign_up",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登入",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"g@gmail.com\",\r\n    \"password\": \"g12345678\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/user/sign_in",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "重設密碼",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"g12345678\",\r\n    \"confirmPassword\": \"g12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/user/updatePassword",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得個人資料",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/user/profile",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新個人資料",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"g\",\r\n    \"gender\": \"female\",\r\n    \"photo\": \"https://images.unsplash.com/photo-1618988727281-8d54f5d32932?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1177&q=80\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/user/profile",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得個人按讚名單",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/user/getLikeList",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"getLikeList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upload",
+			"item": [
+				{
+					"name": "上傳圖片",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/avatar5.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://secret-depths-67335.herokuapp.com/upload",
+							"protocol": "https",
+							"host": [
+								"secret-depths-67335",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"upload"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "photo",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
